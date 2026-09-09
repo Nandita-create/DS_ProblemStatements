@@ -72,14 +72,17 @@ int main()
         switch(choice)
         {
             case 1:
+            {
             int value;
             cout<<"Enter value to be inserted: ";
             cin>>value;
             Insert(queue, value, front, rear, size);
             Print(queue, front, rear);
             break;
+            }
 
             case 2:
+            {
             del = Delete(queue, front, rear);
             if (del==-1)
             break;
@@ -87,16 +90,21 @@ int main()
             cout<<"Deleted Element: "<<del<<endl;
             Print(queue, front, rear);
             break;
+            }
 
             case 3:
+            {
             cout<<"Printing Queue: \n";
             Print(queue, front, rear);
             break;
+            }
 
             case 0:
+            {
             cout<<"Exiting...";
             x=0;
             break;
+            }
 
             default:
             cout<<"Invalid Input \n";
