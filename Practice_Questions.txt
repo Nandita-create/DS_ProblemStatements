@@ -1,0 +1,114 @@
+Basic
+1.	Program to Find Area of Square and Circumference of a Circle
+2.	Program to Find Area of a Triangle using Hero Formula
+3.	Simple Interest
+4.	Compound Interest 
+5.	Program to Convert Temperature from Degree Centigrade to Fahrenheit 
+6.	Program to Find Sum and Average of Three Real Numbers
+7.	Program to Calculate the Net Salary (Enter the basic salary. DA is 10% of basic Salary, HRA is 30% of Basic salary, Medical is 20% of Basic Salary and Travel allowance is 15% of basic salary so calculate Net salary)
+8.	Program to Swap Values of Two Variables Without using Third Variable
+9.	Program to Swap Values of Two Variables by using Third Variable
+10.	Program To find sum of the digits of the 3 digit no without loop
+11.	Program to Convert Time in Seconds to Hours Minutes and Seconds
+
+IF-ELSE & Switch
+1.	To check weather Number is even or Odd
+2.	check weather no is positive, negative or zero 
+3.	Switch to tell days of the week(mean 1 for Monday, 2 for Tuesday ……. 7 for sunday)
+4.	Second Largest no out of 3 (Nested If-else)
+5.	Changer Lowercase to Upper Case and vice-versa
+6.	Check weather character is vowel or not
+7.	Leap Year using Nested If-Else
+8.	Provide Remarks according to grade using Switch case (take the grade from user like A, B , C,D,F and remarks for A is Outstanding, B excellent , C Good, D- Average need to work hard, F – fail) 
+9.	Calculator using switch (1.Addation\n 2.Subtraction \n 3.Multiplication \n 4.Divide&quot;))
+10.	Write A Menu Driven Program To Convert Fahrenheit Temperature to Centigrade Or Centigrade To Fahrenheit Temperature. (1.Convert C to F  \n 2.Convert F to C  )
+
+Loops
+1.	Sum of first 10 numbers.
+2.	Fibonnaci series
+3.	Factorial of a number
+4.	to find sum of the digits of the no.
+5.	To reverse the Number (1234  4321)
+6.	*Write A Menu Driven Program which has following operations:
+a)	Factorial of a number
+b)	Prime or not
+c)	Odd or Even
+d)	Exit.
+7.	Distribute grades to the students (Use of Loop &amp; IF-Else) (Enter 5 subjects number using loop then provide the grade based on total of those numbers)
+
+8. Print Pattern
+a)	*				
+**				
+***
+****
+
+b)	*****
+****
+***
+**
+*
+c)	     *
+   ***
+ *****
+*******
+d)	     *
+   ***
+ *****
+*******
+  *****
+    ***
+      *
+
+9. Now Print all above pattern with increasing Numbers for eg
+e)	1
+2 3
+4 5 6
+7 8 9 10
+
+f)	             		1
+       1            1 
+1	1
+g)	1
+2 3 2
+3 4 5 4 3
+4 5 6 7 6 5 4
+5 6 7 8 9 8 7 6 5
+
+FUNCTION AND POINTERS PROGRAMS
+1.	Write A Menu Driven Program using function which has following function:
+a) Factorial of a number
+b) Prime or not
+c) Odd or Even
+d) Exit
+2.	Write a function to swap 2 variables using call by value and call by reference
+3.	Create a function to print all prime numbers between two numbers (For eg print all prime numbers between 10 to 80 )
+4.	Create a function to convert binary number into decimal
+5.	Create a function to convert  decimal number into binary
+6.	Create a function to convert decimal number to hexadecimal number. 
+Recursion Programmes
+1.	WAP To find factorial of a number using recursion
+2.	WAP To print Fibonacci series with recursion
+3.	WAP To find GCD of two numbers using recursion
+4.	WAP to find-out LCM of three numbers using recursion
+5.	WAP to find given number is a palindrome or not using recursion
+6.	WAP To check number is prime or not using recursion
+7.	WAP to Reverse the number using recursion
+
+ 
+Structure
+1.	Create a structure name book contains Title, author, price and pages. Now enter 3 books entry. And find books which has maximum number of pages. Also find the book with lowest price.
+String
+1.	WAP to Remove all characters that are not alphabets in String.
+2.	WAP to Count Vowels in given string.
+3.	Create a function to Concatenate 2 strings
+4.	Create a function to reverse string. 
+Array
+1.	Crate an array of integer and find out maximum and minimum in that array.
+2.	Create 2 array. Now create a function to create union of both of array. (Pass both array to function)
+3.	Create 2 array. Now create a function to create intersection of both of array. (Pass both array to function) 
+4.	Short the array by
+a.	Insertion short
+b.	Selection short
+c.	Quick Short
+5.	Apply binary search to find an element in shorted array
+
