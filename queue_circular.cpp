@@ -3,7 +3,8 @@ using namespace std;
 
 void Insert(int, int, int&, int&, int);
 void Delete(int, int&, int&, int);
-void Print(int, int, int, int);
+void Peek(int, int&);
+void Display(int, int, int, int);
 
 void Insert(int queue[], int value, int &front, int &rear, int size)
 {
@@ -42,7 +43,18 @@ int Delete(int queue[], int &front, int &rear, int size)
     return element;
 }
 
-void Print(int queue[], int front, int rear, int size)
+void Peek(int queue[], int &front)
+{
+    if (front==-1)
+    {
+        cout<<"Queue is Empty"<<endl;
+        return;
+    }
+
+    cout<<queue[front]<<endl;
+}
+
+void Display(int queue[], int front, int rear, int size)
 {
     if (front==-1)
     {
@@ -73,7 +85,7 @@ int main()
     int x=1;
     while(x==1)
     {
-        cout<<"Enter: \n1. Insert \n2. Delete \n3. Print \n0. Exit \n";
+        cout<<"Enter: \n1. Insert \n2. Delete \n3. Peek \n4. Display \n0. Exit \n";
         cin>>choice;
 
         switch (choice)
@@ -82,18 +94,23 @@ int main()
             cout<<"Enter value to be inserted: ";
             cin>>value;
             Insert(queue, value, front, rear, size);
-            Print(queue, front, rear, size);
+            Display(queue, front, rear, size);
             break;
 
             case 2:
             del = Delete(queue, front, rear, size);
             cout<<"Deleting "<<del<<endl;
-            Print(queue, front, rear, size);
+            Display(queue, front, rear, size);
             break;
 
             case 3:
-            cout<<"Printing Queue: \n";
-            Print(queue, front, rear, size);
+            cout<<"Peek: ";
+            Peek(queue, front);
+            break;
+
+            case 4:
+            cout<<"Displaying Queue: \n";
+            Display(queue, front, rear, size);
             break;
 
             case 0:

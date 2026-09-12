@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hospital Management System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <h2>🏥 MediCore</h2>
+        <p id="backendStatus">Connecting to backend...</p>
+
+        <p class="subtitle">Hospital Management</p>
+
+        <nav>
+
+            <button onclick="showSection('dashboard')">
+                Dashboard
+            </button>
+
+            <button onclick="showSection('patients')">
+                Patients
+            </button>
+
+            <button onclick="showSection('medical-history')">
+                Medical History
+            </button>
+
+            <button onclick="showSection('appointments')">
+                OPD Queue
+            </button>
+
+            <button onclick="showSection('emergency')">
+                Emergency
+            </button>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Dashboard -->
+        <section id="dashboard" class="section active">
+
+            <div class="page-header">
+                <div>
+                    <h1>Dashboard</h1>
+                    <p>Hospital Management System</p>
+                </div>
+
+                <div class="date">
+                    06 September 2026
+                </div>
+            </div>
+
+
+            <div class="cards">
+
+                <div class="card">
+                    <span class="card-icon">👤</span>
+                    <div>
+                        <p>Total Patients</p>
+                        <h2 id="patientCount">3</h2>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <span class="card-icon">📋</span>
+                    <div>
+                        <p>OPD Queue</p>
+                        <h2 id="appointmentCount">2</h2>
+                    </div>
+                </div>
+
+                <div class="card emergency-card">
+                    <span class="card-icon">🚨</span>
+                    <div>
+                        <p>Emergency</p>
+                        <h2 id="emergencyCount">2</h2>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <span class="card-icon">🩺</span>
+                    <div>
+                        <p>Medical Records</p>
+                        <h2>4</h2>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="dashboard-grid">
+
+                <div class="panel">
+
+                    <h2>Recent Patients</h2>
+
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Department</th>
+                                <th>Doctor</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="recentPatients">
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <div class="panel">
+
+                    <h2>Emergency Queue</h2>
+
+                    <div id="dashboardEmergency">
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Patients -->
+        <section id="patients" class="section">
+
+            <div class="page-header">
+
+                <div>
+                    <h1>Patient Management</h1>
+                    <p>Manage registered patients</p>
+                </div>
+
+                <button class="primary-btn" onclick="openPatientForm()">
+                    + Add Patient
+                </button>
+
+            </div>
+
+
+            <div class="panel">
+
+                <div class="search-bar">
+
+                    <input
+                        type="number"
+                        id="patientSearch"
+                        placeholder="Search by Patient ID"
+                    >
+
+                    <button onclick="searchPatient()">
+                        Search
+                    </button>
+
+                    <button onclick="loadPatients()">
+                        Show All
+                    </button>
+
+                </div>
+
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Patient ID</th>
+                            <th>Name</th>
+                            <th>Age</th>
+                            <th>Gender</th>
+                            <th>Blood Group</th>
+                            <th>Department</th>
+                            <th>Doctor ID</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="patientTable">
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- Medical History -->
+        <section id="medical-history" class="section">
+
+            <div class="page-header">
+
+                <div>
+                    <h1>Medical History</h1>
+                    <p>View patient medical records</p>
+                </div>
+
+            </div>
+
+
+            <div class="panel">
+
+                <div class="search-bar">
+
+                    <input
+                        type="number"
+                        id="historyPatientID"
+                        placeholder="Enter Patient ID"
+                    >
+
+                    <button onclick="showHistory()">
+                        View History
+                    </button>
+
+                </div>
+
+
+                <div id="historyContainer">
+
+                    <p class="empty-message">
+                        Enter a Patient ID to view medical history.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- OPD Queue -->
+        <section id="appointments" class="section">
+
+            <div class="page-header">
+
+                <div>
+                    <h1>OPD Queue</h1>
+                    <p>First-In-First-Out appointment management</p>
+                </div>
+
+                <button class="primary-btn" onclick="addAppointment()">
+                    + Add Appointment
+                </button>
+
+            </div>
+
+
+            <div class="queue-info">
+
+                <div>
+                    <span>Patients Waiting</span>
+                    <strong id="queueCount">2</strong>
+                </div>
+
+                <div>
+                    <span>Next Patient</span>
+                    <strong id="nextPatient">101</strong>
+                </div>
+
+            </div>
+
+
+            <div class="panel">
+
+                <h2>Current OPD Queue</h2>
+
+                <div id="appointmentQueue">
+                </div>
+
+                <button
+                    class="danger-btn"
+                    onclick="attendAppointment()"
+                >
+                    Attend Next Patient
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- Emergency -->
+        <section id="emergency" class="section">
+
+            <div class="page-header">
+
+                <div>
+                    <h1>Emergency Management</h1>
+                    <p>Priority-based emergency queue</p>
+                </div>
+
+                <button class="emergency-btn" onclick="addEmergency()">
+                    + Add Emergency Patient
+                </button>
+
+            </div>
+
+
+            <div class="priority-info">
+
+                <div>
+                    <strong>5</strong>
+                    <span>Critical</span>
+                </div>
+
+                <div>
+                    <strong>4</strong>
+                    <span>Very Serious</span>
+                </div>
+
+                <div>
+                    <strong>3</strong>
+                    <span>Serious</span>
+                </div>
+
+                <div>
+                    <strong>2</strong>
+                    <span>Moderate</span>
+                </div>
+
+                <div>
+                    <strong>1</strong>
+                    <span>Mild</span>
+                </div>
+
+            </div>
+
+
+            <div class="panel">
+
+                <h2>Emergency Queue</h2>
+
+                <div id="emergencyQueue">
+                </div>
+
+                <button
+                    class="danger-btn"
+                    onclick="treatEmergency()"
+                >
+                    Treat Highest Priority
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Add Patient Modal -->
+
+    <div id="patientModal" class="modal">
+
+        <div class="modal-content">
+
+            <span
+                class="close"
+                onclick="closePatientForm()"
+            >
+                &times;
+            </span>
+
+            <h2>Add Patient</h2>
+
+            <form onsubmit="addPatient(event)">
+
+                <input
+                    id="newPatientID"
+                    type="number"
+                    placeholder="Patient ID"
+                    required
+                >
+
+                <input
+                    id="newPatientName"
+                    type="text"
+                    placeholder="Name"
+                    required
+                >
+
+                <input
+                    id="newPatientAge"
+                    type="number"
+                    placeholder="Age"
+                    required
+                >
+
+                <select id="newPatientGender">
+                    <option value="">Gender</option>
+                    <option>Male</option>
+                    <option>Female</option>
+                    <option>Other</option>
+                </select>
+
+                <input
+                    id="newPatientBlood"
+                    type="text"
+                    placeholder="Blood Group"
+                    required
+                >
+
+                <input
+                    id="newPatientDepartment"
+                    type="text"
+                    placeholder="Department"
+                    required
+                >
+
+                <input
+                    id="newPatientDoctor"
+                    type="number"
+                    placeholder="Doctor ID"
+                    required
+                >
+
+                <button class="primary-btn" type="submit">
+                    Add Patient
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

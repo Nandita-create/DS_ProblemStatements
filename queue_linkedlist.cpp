@@ -49,7 +49,18 @@ int Delete(QueueNode* &front, QueueNode* &rear)
     return element;
 }
 
-void Print(QueueNode* front)
+void Peek(QueueNode* front)
+{
+    if (front==NULL)
+    {
+        cout<<"Queue is Empty"<<endl;
+        return;
+    }
+
+    cout<<front->val<<endl;
+}
+
+void Display(QueueNode* front)
 {
     QueueNode* current = front;
     while(current!=NULL)
@@ -67,7 +78,7 @@ int main()
     int x=1, choice, value, del;
     while (x==1)
     {
-        cout<<"Enter: \n1. Insert \n2. Delete \n3. Print \n0. Exit \n";
+        cout<<"Enter: \n1. Insert \n2. Delete \n3. Peek \n4. Display \n0. Exit \n";
         cin>>choice;
         switch (choice)
         {
@@ -75,7 +86,7 @@ int main()
             cout<<"Enter value to be inserted: ";
             cin>>value;
             Insert(front, rear, value);
-            Print(front);
+            Display(front);
             break;
 
             case 2:
@@ -84,12 +95,18 @@ int main()
             break;
 
             cout<<"Deleted Element: "<<del<<endl;
-            Print(front);
+            Display(front);
             break;
 
             case 3:
-            cout<<"Printing Queue: \n";
-            Print(front);
+            cout<<"Peek: ";
+            Peek(front);
+            cout<<endl;
+            break;
+
+            case 4:
+            cout<<"Displaying Queue: \n";
+            Display(front);
             break;
 
             case 0:
