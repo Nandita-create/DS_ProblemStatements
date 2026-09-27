@@ -1,6 +1,11 @@
 #include <iostream>
 using namespace std;
 
+void Push(int [], int&, int, int);
+int Pop(int [], int&, int);
+void Peek(int [], int&);
+void Display(int [], int&);
+
 void Push(int stack[], int& top, int value, int size)
 {
     if (top==size-1)
@@ -91,7 +96,7 @@ int main()
             break;
 
             default:
-            cout<<"Invalid Input"<<endl;
+            cout<<"Invalid Input "<<endl;
         }
     }
     return 0;
