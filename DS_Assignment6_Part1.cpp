@@ -204,5 +204,5 @@ int main()
 }
 
 // Run using:
-// g++ binary_tree.cpp -o binary_tree
-// ./binary_tree
+// g++ DS_Assignment6_Part1.cpp -o DS_Assignment6_Part1
+// ./DS_Assignment6_Part1
